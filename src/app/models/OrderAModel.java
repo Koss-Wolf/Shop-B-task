@@ -4,7 +4,10 @@ import app.base.BaseModel;
 
 public class OrderAModel implements BaseModel {
 
-    public double getOrderCost(int quota, ) {
-        return quota * price;
+    public OrderAModel() {
+    }
+
+    public double getOrderCost(int quota, double price) {
+        return (double)quota * price;
     }
 }

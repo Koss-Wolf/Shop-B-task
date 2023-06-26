@@ -5,14 +5,17 @@ import app.utils.Constants;
 
 public class OrderBModel implements BaseModel {
 
-    public double deliveryRate = Constants.;
+    public double deliveryRate = 2.5;
 
-    @Override
+    public OrderBModel() {
+    }
+
     public double getOrderCost(int quota, double price) {
-        return (quota * price) * (1 + deliveryRate / 100);
+        return (double)quota * price * (1.0 + this.deliveryRate / 100.0);
     }
 
     public double getDeliveryCost(int quota, double price) {
-        return quota * price * deliveryRate / 100;
+        return (double)quota * price * this.deliveryRate / 100.0;
     }
+
 }
