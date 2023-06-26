@@ -16,36 +16,33 @@ public class OrderBController {
 
     public void handleData() {
 
-        view = new OrderView();
-        data = getData();
-        model = new OrderBModel();
-
-        double orderCost = getOrderCost();
-        orderCostRounded = Rounder.roundValue(orderCost);
-
-        double deliveryCost = getDeliveryCost();
-        deliveryCostRounded = Rounder.roundValue(deliveryCost);
-
-        view.getOutput(formOutput());
+        this.view = new OrderView();
+        this.data = this.getData();
+        this.model = new OrderBModel();
+        double orderCost = this.getOrderCost();
+        this.orderCostRounded = Rounder.roundValue(orderCost);
+        double deliveryCost = this.getDeliveryCost();
+        this.deliveryCostRounded = Rounder.roundValue(deliveryCost);
+        this.view.getOutput(this.formOutput());
     }
 
     private String[] getData() {
-        return
+        return this.view.getData();
     }
 
     private double getOrderCost() {
-        return model.getOrderCost(Integer.parseInt(data[1]),
-                Double.parseDouble(data[3]));
+        return model.getOrderCost(Integer.parseInt(this.data[1]),
+                Double.parseDouble(this.data[2]));
     }
 
     private double getDeliveryCost() {
-        return  model.getDeliveryCost(Integer.parseInt(data[1]),
-                Double.parseDouble(data[2]));
+        return  model.getDeliveryCost(Integer.parseInt(this.data[1]),
+                Double.parseDouble(this.data[2]));
     }
 
     private String formOutput() {
-        return "\nOrder " + data[0] + " cost is " +  +
-                " " + orderCost + "\nDelivery cost is " + Constants.CURRENCY +
-                " " + deliveryCostRounded;
+        String form = this.data[0];
+        return "\nOrder " + form + " cost is " + this.orderCostRounded + "\nDelivery cost is " +
+                " " + this.deliveryCostRounded;
     }
 }
