@@ -8,7 +8,8 @@ import java.util.Scanner;
 public class Main {
 
     static Scanner scanner;
-
+    public Main() {
+    }
     public static void main(String[] args) {
         filterOption(getOption());
     }

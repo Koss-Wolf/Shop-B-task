@@ -1,8 +1,6 @@
 package app.controllers;
 
-import app.base.BaseController;
 import app.models.OrderBModel;
-import app.utils.Constants;
 import app.utils.Rounder;
 import app.views.OrderView;
 
@@ -31,12 +29,12 @@ public class OrderBController {
     }
 
     private double getOrderCost() {
-        return model.getOrderCost(Integer.parseInt(this.data[1]),
+        return this.model.getOrderCost(Integer.parseInt(this.data[1]),
                 Double.parseDouble(this.data[2]));
     }
 
     private double getDeliveryCost() {
-        return  model.getDeliveryCost(Integer.parseInt(this.data[1]),
+        return  this.model.getDeliveryCost(Integer.parseInt(this.data[1]),
                 Double.parseDouble(this.data[2]));
     }
 
