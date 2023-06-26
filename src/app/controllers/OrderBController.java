@@ -6,7 +6,7 @@ import app.utils.Constants;
 import app.utils.Rounder;
 import app.views.OrderView;
 
-public class OrderBController extends BaseController {
+public class OrderBController {
 
     private OrderView view;
     private OrderBModel model;
